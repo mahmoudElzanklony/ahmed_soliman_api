@@ -21,7 +21,7 @@ class GeneralServiceController extends Controller
         try{
 
             DB::table($table)->delete($id);
-            return Messages::success([trans('messages.deleted_successfully')]);
+            return Messages::success(trans('messages.deleted_successfully'));
         }catch (\Exception $e){
             return Messages::error($e->getMessage());
            // DB::table($table)->delete($id);
