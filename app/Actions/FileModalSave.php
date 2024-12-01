@@ -2,6 +2,7 @@
 
 namespace App\Actions;
 
+use App\Jobs\GenerateExpiringWasabiUrls;
 use App\Models\files;
 
 class FileModalSave
@@ -13,6 +14,8 @@ class FileModalSave
             'name'=>$file_name,
             'type'=>$file_type,
         ]);
+        $obj = new GenerateExpiringWasabiUrls();
+        $obj->handle();
         return true;
     }
 }

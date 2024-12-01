@@ -17,7 +17,8 @@ class FileResource extends JsonResource
     {
         return [
             'id'=>$this->id,
-            'name'=>StreamFiles::stream('files/'.$this->name),
+            //'name'=>StreamFiles::stream('files/'.$this->name),
+            'name'=>$this->wasbi_url,
             'type'=>$this->type,
             'created_at'=>$this->created_at->format('Y-m-d H:i:s'),
         ];

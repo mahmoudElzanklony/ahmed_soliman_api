@@ -74,8 +74,8 @@ class MediaControllerResource extends Controller
         if($file){
             $file_name = $this->upload_file($file);
             files::query()
-                ->where('fileable_id','=',$media->id)
-                ->where('fileable_type','=',files::class)->delete();
+                 ->where('fileable_id','=',$media->id)
+                 ->delete();
             FileModalSave::make($media->id,'media',$file_name,$data['file_type']);
         }
 

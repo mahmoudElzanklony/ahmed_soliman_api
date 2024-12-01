@@ -9,7 +9,7 @@ class files extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['fileable_id','fileable_type','name','type'];
+    protected $fillable = ['fileable_id','fileable_type','name','type','wasbi_url'];
 
     public function fileable()
     {
